@@ -90,7 +90,7 @@ const MyAppointments = () => {
             const { data } = await axios.post(backendUrl + '/api/user/payment-razorpay', { appointmentId }, { headers: { token } })
             if (data.success) {
                 initPay(data.order)
-            } else {
+            }else{
                 toast.error(data.message)
             }
         } catch (error) {
@@ -100,22 +100,20 @@ const MyAppointments = () => {
     }
 
     // Function to make payment using stripe
-    // Named export for appointmentStripe
     const appointmentStripe = async (appointmentId) => {
         try {
             const { data } = await axios.post(backendUrl + '/api/user/payment-stripe', { appointmentId }, { headers: { token } })
             if (data.success) {
                 const { session_url } = data
                 window.location.replace(session_url)
-            } else {
+            }else{
                 toast.error(data.message)
             }
         } catch (error) {
             console.log(error)
             toast.error(error.message)
         }
-    };
-
+    }
 
     useEffect(() => {
         if (token) {
@@ -159,4 +157,4 @@ const MyAppointments = () => {
     )
 }
 
-export default MyAppointments;
+export default MyAppointments

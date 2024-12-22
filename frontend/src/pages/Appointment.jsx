@@ -5,7 +5,6 @@ import { assets } from '../assets/assets'
 import RelatedDoctors from '../components/RelatedDoctors'
 import axios from 'axios'
 import { toast } from 'react-toastify'
-import appointmentStripe from './MyAppointments';
 
 const Appointment = () => {
 
@@ -178,7 +177,7 @@ const Appointment = () => {
                     ))}
                 </div>
 
-                <button onClick={appointmentStripe} className='bg-primary text-white text-sm font-light px-20 py-3 rounded-full my-6'>Book an appointment</button>
+                <button onClick={bookAppointment} className='bg-primary text-white text-sm font-light px-20 py-3 rounded-full my-6'>Book an appointment</button>
             </div>
 
             {/* Listing Releated Doctors */}
